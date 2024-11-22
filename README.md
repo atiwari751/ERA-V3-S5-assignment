@@ -19,25 +19,25 @@ Architecture details:
 
 ## Project Structure
 
-'│
-'├── model/
-'│ ├── init.py
-'│ └── network.py # Model architecture definition
-'│
-'├── tests/
-'│ └── test_model.py # Test cases for model
-'│
-'├── utils/
-'│ └── visualize_augmentations.py # Data augmentation visualization
-'│
-'├── .github/
-'│ └── workflows/
-'│ └── ml-pipeline.yml # CI/CD pipeline configuration
-'│
-'├── train.py # Training script
-'├── requirements.txt # Project dependencies
-'├── README.md # Project documentation
-'└── .gitignore # Git ignore rules
+  │
+  ├── model/
+  │ ├── init.py
+  │ └── network.py # Model architecture definition
+  │
+  ├── tests/
+  │ └── test_model.py # Test cases for model
+  │
+  ├── utils/
+  │ └── visualize_augmentations.py # Data augmentation visualization
+  │
+  ├── .github/
+  │ └── workflows/
+  │ └── ml-pipeline.yml # CI/CD pipeline configuration
+  │
+  ├── train.py # Training script
+  ├── requirements.txt # Project dependencies
+  ├── README.md # Project documentation
+  └── .gitignore # Git ignore rules
 
 
 ## Tests
