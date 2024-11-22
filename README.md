@@ -44,7 +44,7 @@ Architecture details:
 
 ## Tests
 
-The project includes three main tests:
+The project includes six main tests:
 
 1. **Parameter Count Test**
    - Ensures model has less than 25,000 parameters
@@ -59,12 +59,48 @@ The project includes three main tests:
    - Tests on MNIST test set
    - Requires >95% accuracy
 
+4. **Augmentation Test**
+   - Verifies all image augmentations work correctly
+   - Checks pixel differences in augmented images
+   - Reports success/failure for each augmentation
+
+5. **Model Architecture Test**
+   - Verifies layer dimensions and configurations
+   - Checks convolution channels
+   - Validates batch normalization features
+   - Confirms dropout rate
+   - Ensures architecture consistency
+
+6. **Memory Usage Test**
+   - Measures model size in MB
+   - Calculates batch memory requirements
+   - Ensures total memory usage < 100MB
+   - Monitors memory efficiency
+
 ## Expected Results
 
-- Model Parameter Count: ~10,000 parameters
-- Training Time: ~2-3 minutes on CPU
-- Test Accuracy: >95% after one epoch
-- Memory Usage: <100MB
+- Model Architecture:
+  - Conv1: 1 → 4 channels
+  - Conv2: 4 → 8 channels
+  - BatchNorm: 4 and 8 features respectively
+  - Dropout rate: 0.25
+  - FC layers: 392 → 32 → 10
+
+- Model Metrics:
+  - Parameter Count: ~10,000 parameters
+  - Memory Usage: < 5MB for model
+  - Batch Memory (64 images): < 2MB
+  - Total Memory Usage: < 10MB
+
+- Performance Metrics:
+  - Training Time: ~2-3 minutes on CPU
+  - Test Accuracy: >95% after one epoch
+  - Inference Time: < 100ms per image
+
+- Augmentation Results:
+  - 9 different augmentations
+  - Expected pixel differences: 5-20%
+  - All augmentations preserve image size (28x28)
 
 ## Running Locally
 
