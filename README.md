@@ -1,5 +1,7 @@
 # MNIST Classification with CI/CD Pipeline
 
+![ML Pipeline](https://github.com/atiwari751/ERA-V3-S5-assignment/actions/workflows/ml-pipeline.yml/badge.svg)
+
 This project implements a lightweight CNN model for MNIST digit classification with a complete CI/CD pipeline using GitHub Actions.
 
 ## Model Architecture
