@@ -1,6 +1,41 @@
+# Python cache files
 __pycache__/
-*.pyc
-data/
+*.py[cod]
+*$py.class
 .pytest_cache/
-venv
+
+# Virtual environments
+venv/
+env/
+.env/
+.venv/
+
+# Data and model files
+data/
 models/
+*.pth
+*.pt
+*.ckpt
+*.h5
+*.hdf5
+*.pkl
+*.pickle
+
+# MNIST specific
+*ubyte
+*ubyte.gz
+
+# IDE specific
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Logs and temporary files
+*.log
+tmp/
+temp/
