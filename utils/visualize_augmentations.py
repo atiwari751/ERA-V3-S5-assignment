@@ -22,6 +22,7 @@ def show_augmentations(image, label):
     augmentations = {
         'Original': lambda x: x,
         'Rotation (30°)': lambda x: F.rotate(x, 30),
+        'Rotation (45°)': lambda x: F.rotate(x, 45),
         'Horizontal Flip': F.hflip,
         'Vertical Flip': F.vflip,
         'Affine': lambda x: F.affine(x, angle=15, translate=(0.1, 0.1), 
@@ -29,10 +30,7 @@ def show_augmentations(image, label):
         'Brightness': lambda x: F.adjust_brightness(x, 1.5),
         'Contrast': lambda x: F.adjust_contrast(x, 1.5),
         'Gaussian Blur': lambda x: F.gaussian_blur(x, kernel_size=[3, 3], 
-                                                 sigma=[0.5, 0.5]),
-        'Random Perspective': lambda x: F.perspective(x, 
-                                                    startpoints=[[0, 0], [1, 0], [1, 1], [0, 1]],
-                                                    endpoints=[[0.1, 0.1], [0.9, 0], [0.9, 0.9], [0.1, 0.9]])
+                                                 sigma=[0.5, 0.5])
     }
 
     # Create subplot grid

@@ -24,8 +24,22 @@ jobs:
         python train.py
         
     - name: Run tests
+      env:
+        PYTHONPATH: .
+        FORCE_COLOR: 1
       run: |
-        PYTHONPATH=. pytest tests/test_model.py -v
+        pytest tests/test_model.py -v -s --color=yes | tee test_output.txt
+        echo "::group::Detailed Test Results"
+        cat test_output.txt
+        echo "::endgroup::"
+        
+    - name: Upload test results
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-results
+        path: test_output.txt
+        retention-days: 90
         
     - name: Upload trained model
       uses: actions/upload-artifact@v4
