@@ -13,7 +13,8 @@ def count_parameters(model):
 def test_model_parameters():
     model = SimpleCNN()
     num_params = count_parameters(model)
-    assert num_params < 100000, f"Model has {num_params} parameters, should be less than 100000"
+    assert num_params < 25000, f"Model has {num_params} parameters, should be less than 25000"
+    print(f"\nModel has {num_params} parameters")
 
 def test_input_output_shape():
     model = SimpleCNN()
@@ -55,4 +56,5 @@ def test_model_accuracy():
             correct += (predicted == target).sum().item()
     
     accuracy = 100 * correct / total
-    assert accuracy > 80, f"Accuracy is {accuracy}%, should be > 80%"
+    assert accuracy > 95, f"Accuracy is {accuracy}%, should be > 95%"
+    print(f"\nModel achieved {accuracy:.2f}% accuracy on test set")
